@@ -1,4 +1,6 @@
 package lk.ijse.hms.bo.custom;
 
-public interface StudentBO {
+import lk.ijse.hms.bo.SuperBO;
+
+public interface StudentBO extends SuperBO {
 }

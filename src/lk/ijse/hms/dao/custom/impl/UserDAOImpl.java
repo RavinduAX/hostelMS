@@ -1,4 +1,6 @@
 package lk.ijse.hms.dao.custom.impl;
 
-public class UserDAOImpl {
+import lk.ijse.hms.dao.custom.UserDAO;
+
+public class UserDAOImpl implements UserDAO {
 }

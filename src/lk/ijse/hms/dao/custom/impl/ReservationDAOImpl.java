@@ -1,4 +1,6 @@
 package lk.ijse.hms.dao.custom.impl;
 
-public class ReservationDAOImpl {
+import lk.ijse.hms.dao.custom.ReservationDAO;
+
+public class ReservationDAOImpl implements ReservationDAO {
 }

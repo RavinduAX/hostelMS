@@ -1,4 +1,6 @@
 package lk.ijse.hms.dao.custom;
 
-public interface ReservationDAO {
+import lk.ijse.hms.dao.SuperDAO;
+
+public interface ReservationDAO extends SuperDAO {
 }

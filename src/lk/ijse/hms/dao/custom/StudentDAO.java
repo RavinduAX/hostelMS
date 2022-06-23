@@ -1,4 +1,6 @@
 package lk.ijse.hms.dao.custom;
 
-public interface StudentDAO {
+import lk.ijse.hms.dao.SuperDAO;
+
+public interface StudentDAO extends SuperDAO {
 }

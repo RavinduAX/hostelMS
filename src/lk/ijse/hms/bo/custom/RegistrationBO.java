@@ -1,4 +1,6 @@
 package lk.ijse.hms.bo.custom;
 
-public interface RegistrationBO {
+import lk.ijse.hms.bo.SuperBO;
+
+public interface RegistrationBO extends SuperBO {
 }

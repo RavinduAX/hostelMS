@@ -1,4 +1,7 @@
 package lk.ijse.hms.bo.custom.impl;
 
-public class RegistrationBOImpl {
+import lk.ijse.hms.bo.custom.RegistrationBO;
+
+public class RegistrationBOImpl implements RegistrationBO {
+
 }

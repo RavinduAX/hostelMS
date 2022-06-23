@@ -1,4 +1,6 @@
 package lk.ijse.hms.dao.custom.impl;
 
-public class RoomDAOImpl {
+import lk.ijse.hms.dao.custom.RoomDAO;
+
+public class RoomDAOImpl implements RoomDAO {
 }
