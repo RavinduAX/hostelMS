@@ -1,14 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.hms.controller.StudentManageFormController"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.StudentManageFormController">
+   <children>
+      <JFXTextField labelFloat="true" layoutX="20.0" layoutY="106.0" prefHeight="42.0" prefWidth="169.0" promptText="Student ID">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXTextField>
+      <TableView layoutX="20.0" layoutY="262.0" prefHeight="348.0" prefWidth="959.0">
+        <columns>
+          <TableColumn prefWidth="105.0" text="Student ID" />
+          <TableColumn prefWidth="150.0" text="Name" />
+            <TableColumn prefWidth="155.0" text="Address" />
+            <TableColumn prefWidth="149.0" text="Contact No" />
+            <TableColumn prefWidth="129.0" text="DOB" />
+            <TableColumn prefWidth="126.0" text="Gender" />
+            <TableColumn prefWidth="144.0" text="Delete" />
+        </columns>
+      </TableView>
+      <JFXTextField labelFloat="true" layoutX="468.0" layoutY="106.0" prefHeight="42.0" prefWidth="268.0" promptText="Address">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField labelFloat="true" layoutX="20.0" layoutY="183.0" prefHeight="42.0" prefWidth="169.0" promptText="Contact No">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField labelFloat="true" layoutX="207.0" layoutY="106.0" prefHeight="42.0" prefWidth="241.0" promptText="Name">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="807.0" layoutY="190.0" prefHeight="42.0" prefWidth="158.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+      <JFXDatePicker layoutX="231.0" layoutY="196.0" promptText="DOB" />
+      <JFXComboBox labelFloat="true" layoutX="481.0" layoutY="196.0" prefHeight="31.0" prefWidth="190.0" promptText="Gender" />
+      <JFXButton layoutX="871.0" layoutY="40.0" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXButton>
+   </children>
 </AnchorPane>

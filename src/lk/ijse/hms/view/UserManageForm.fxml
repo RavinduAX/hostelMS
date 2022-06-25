@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="lk.ijse.hms.controller.UserManageFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="647.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.UserManageFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="75.0" layoutY="28.0" prefHeight="45.0" prefWidth="109.0" text="Label">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Text layoutX="192.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Settings" wrappingWidth="217.04150390625">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Text>
+      <Line endX="841.0" layoutX="115.0" layoutY="81.0" startX="-51.0" />
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="392.0" layoutX="546.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="411.0" />
+      <JFXButton buttonType="RAISED" layoutX="617.0" layoutY="474.0" prefHeight="45.0" prefWidth="270.0" style="-fx-background-color: yellow; -fx-background-radius: 45;" text="Change Password">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="617.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Password" wrappingWidth="217.04150390625">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text layoutX="617.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password" wrappingWidth="217.04150390625">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <TextField layoutX="617.0" layoutY="280.0" prefHeight="31.0" prefWidth="270.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="617.0" layoutY="385.0" prefHeight="31.0" prefWidth="270.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+      <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="392.0" layoutX="63.0" layoutY="182.0" stroke="BLACK" strokeType="INSIDE" width="411.0" />
+      <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="474.0" prefHeight="45.0" prefWidth="270.0" style="-fx-background-color: yellow; -fx-background-radius: 45;" text="Change UserName">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="134.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current UserName" wrappingWidth="217.04150390625">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <Text layoutX="134.0" layoutY="375.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New UserName" wrappingWidth="217.04150390625">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Text>
+      <TextField layoutX="134.0" layoutY="280.0" prefHeight="31.0" prefWidth="270.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="134.0" layoutY="385.0" prefHeight="31.0" prefWidth="270.0">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </TextField>
+      <Separator layoutX="507.0" layoutY="114.0" orientation="VERTICAL" prefHeight="509.0" prefWidth="0.0" />
+      <Label alignment="CENTER" layoutX="64.0" layoutY="156.0" prefHeight="53.0" prefWidth="270.0" style="-fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: white;" text="Change UserName">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="546.0" layoutY="156.0" prefHeight="53.0" prefWidth="270.0" style="-fx-border-color: black; -fx-background-radius: 20; -fx-border-radius: 20; -fx-background-color: white;" text="Change Password">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+   </children>
 </AnchorPane>

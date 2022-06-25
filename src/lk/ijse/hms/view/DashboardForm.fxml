@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="1221.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.DashboardFormController">
+   <children>
+      <Rectangle fill="GREY" height="690.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="222.0" />
+      <Rectangle fill="GREY" height="65.0" layoutX="222.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1000.0" />
+      <JFXButton buttonType="RAISED" layoutX="1081.0" layoutY="10.0" prefHeight="45.0" prefWidth="126.0" style="-fx-border-color: white; -fx-border-width: 3; -fx-background-radius: 5; -fx-border-radius: 5;" text="Log Out" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="221.0" layoutY="64.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1000.0" />
+      <JFXButton layoutX="5.0" layoutY="178.0" prefHeight="48.0" prefWidth="213.0" style="-fx-background-color: white;" text="Registration">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="5.0" layoutY="236.0" prefHeight="48.0" prefWidth="213.0" style="-fx-background-color: white;" text="Manage Students">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="5.0" layoutY="120.0" prefHeight="48.0" prefWidth="213.0" style="-fx-background-color: white;" text="Manage Rooms">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="5.0" layoutY="679.0" prefHeight="48.0" prefWidth="213.0" style="-fx-background-color: white;" text="User Settings">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXButton>
+      <Separator layoutX="12.0" layoutY="653.0" prefWidth="200.0" />
+      <Label alignment="CENTER" layoutX="584.0" layoutY="10.0" prefHeight="45.0" prefWidth="276.0" text="Title">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Text layoutX="22.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D24">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Text>
+      <Text layoutX="96.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hostel">
+         <font>
+            <Font name="System Bold Italic" size="32.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="5.0" layoutY="295.0" prefHeight="48.0" prefWidth="213.0" style="-fx-background-color: white;" text="Reserved Details">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
