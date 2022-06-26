@@ -16,4 +16,10 @@ public class LoginFormController {
         Stage stage = (Stage) contxtLoginForm.getScene().getWindow();
         stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/DashboardForm.fxml"))));
     }
+
+    public void btnAdminLogInOnAction(ActionEvent actionEvent) throws IOException {
+        Stage stage = new Stage();
+        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/AdminLogInForm.fxml"))));
+        stage.show();
+    }
 }
