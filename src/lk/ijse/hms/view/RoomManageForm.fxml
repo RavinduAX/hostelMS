@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -9,13 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.RoomManageFormController">
    <children>
-      <TableView fx:id="tblRoom" layoutX="56.0" layoutY="259.0" prefHeight="355.0" prefWidth="888.0">
+      <TableView fx:id="tblRoom" layoutX="98.0" layoutY="269.0" prefHeight="355.0" prefWidth="805.0">
         <columns>
-          <TableColumn fx:id="colRoomTypeId" prefWidth="145.0" text="Room Type ID" />
-          <TableColumn fx:id="colType" prefWidth="218.0" text="Type" />
-            <TableColumn fx:id="colKeyMoney" prefWidth="202.0" text="Key Money(LKR)" />
-            <TableColumn fx:id="colRoomsQty" prefWidth="157.0" text="Rooms QTY" />
-            <TableColumn fx:id="colDelete" prefWidth="165.0" text="Delete" />
+          <TableColumn fx:id="colRoomTypeId" prefWidth="170.3333282470703" text="Room Type ID" />
+          <TableColumn fx:id="colType" prefWidth="227.6666717529297" text="Type" />
+            <TableColumn fx:id="colKeyMoney" prefWidth="224.66668701171875" text="Key Money(LKR)" />
+            <TableColumn fx:id="colRoomsQty" prefWidth="183.33331298828125" text="Rooms QTY" />
         </columns>
       </TableView>
       <JFXTextField fx:id="txtRoomTypeId" labelFloat="true" layoutX="56.0" layoutY="181.0" prefHeight="42.0" prefWidth="161.0" promptText="Room Type ID">
@@ -48,5 +48,7 @@
             <Font size="19.0" />
          </font>
       </JFXButton>
+      <FontAwesomeIconView fill="#eb2323" glyphName="TRASH" layoutX="853.0" layoutY="147.0" size="42" textAlignment="CENTER" wrappingWidth="52.14285659790039" />
+      <JFXButton buttonType="RAISED" layoutX="848.0" layoutY="111.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="64.0" text="." textFill="#eb2323" />
    </children>
 </AnchorPane>

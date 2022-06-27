@@ -13,8 +13,9 @@
       <FontAwesomeIconView fill="#eb2323" glyphName="TRASH" layoutX="636.0" layoutY="121.0" size="42" textAlignment="CENTER" wrappingWidth="52.14285659790039" />
       <TableView fx:id="tblUser" layoutX="70.0" layoutY="195.0" prefHeight="278.0" prefWidth="622.0">
         <columns>
-          <TableColumn fx:id="colUserName" prefWidth="308.0" text="UserName" />
-          <TableColumn fx:id="colPassword" prefWidth="313.0" text="Password" />
+          <TableColumn fx:id="colUserId" prefWidth="174.0" text="UserID" />
+          <TableColumn fx:id="colUserName" prefWidth="236.0" text="UserName" />
+            <TableColumn fx:id="colPassword" prefWidth="211.0" text="Password" />
         </columns>
       </TableView>
       <JFXButton buttonType="RAISED" layoutX="631.0" layoutY="85.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="64.0" text="." textFill="#eb2323" />
@@ -28,12 +29,17 @@
             <Font size="19.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="70.0" layoutY="134.0" prefHeight="42.0" prefWidth="179.0" promptText="UserName">
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="198.0" layoutY="143.0" prefHeight="42.0" prefWidth="154.0" promptText="UserName">
          <font>
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtPassword" labelFloat="true" layoutX="287.0" layoutY="134.0" prefHeight="42.0" prefWidth="179.0" promptText="Password">
+      <JFXTextField fx:id="txtPassword" labelFloat="true" layoutX="373.0" layoutY="143.0" prefHeight="42.0" prefWidth="154.0" promptText="Password">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField fx:id="txtUserId" editable="false" labelFloat="true" layoutX="70.0" layoutY="143.0" prefHeight="42.0" prefWidth="105.0" promptText="UserID">
          <font>
             <Font size="19.0" />
          </font>

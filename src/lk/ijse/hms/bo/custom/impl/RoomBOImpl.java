@@ -7,9 +7,36 @@ import lk.ijse.hms.dto.RoomDTO;
 import lk.ijse.hms.entity.Room;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RoomBOImpl implements RoomBO {
 
     RoomDAO roomDAO = (RoomDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ROOM);
 
+    @Override
+    public boolean saveRooms(RoomDTO dto) throws SQLException, ClassNotFoundException {
+        return roomDAO.save(new Room(dto.getRoom_type_id(),dto.getType(), dto.getKey_money(), dto.getQty()));
+    }
+
+    @Override
+    public boolean updateRooms(RoomDTO dto) throws SQLException, ClassNotFoundException {
+       return roomDAO.update(new Room(dto.getRoom_type_id(),dto.getType(), dto.getKey_money(), dto.getQty()));
+    }
+
+    @Override
+    public List<RoomDTO> getAllRooms() throws SQLException, ClassNotFoundException {
+        List<Room> roomList = roomDAO.getAll();
+        List<RoomDTO> dtoList= new ArrayList<>();
+
+        for (Room room : roomList) {
+            dtoList.add(new RoomDTO(room.getRoom_type_id(), room.getType(), room.getKey_money(), room.getQty()));
+        }
+        return dtoList;
+    }
+
+    @Override
+    public boolean deleteRoom(String typeId) throws SQLException, ClassNotFoundException {
+        return roomDAO.delete(typeId);
+    }
 }
