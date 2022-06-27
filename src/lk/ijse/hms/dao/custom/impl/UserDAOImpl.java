@@ -5,6 +5,7 @@ import lk.ijse.hms.entity.User;
 import lk.ijse.hms.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -73,5 +74,22 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public String generateNewId() throws SQLException, ClassNotFoundException {
         return null;
+    }
+
+    @Override
+    public boolean updateUname(User entity) throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String newUName = entity.getUser_name();
+        String pwd = entity.getPassword();
+        String hql = "UPDATE User SET user_name = :uName WHERE password = :pswd";
+        Query query = session.createQuery(hql);
+        query.setParameter("uName", newUName);
+        query.setParameter("pswd", pwd);
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 }

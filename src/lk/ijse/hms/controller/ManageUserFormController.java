@@ -30,13 +30,15 @@ public class ManageUserFormController {
     public JFXTextField txtPassword;
     public JFXTextField txtUserName;
     public FontAwesomeIconView btnDelete;
+    public TableColumn colUserId;
+    public JFXTextField txtUserId;
 
     UserBO userBO = (UserBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.USER);
 
     public void initialize(){
         colUserName.setCellValueFactory(new PropertyValueFactory<>("user_name"));
         colPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
-        //colDelete.setCellValueFactory(new PropertyValueFactory<>("btn"));
+        colUserId.setCellValueFactory(new PropertyValueFactory<>("btn"));
 
         loadAllUsers();
 
@@ -55,6 +57,7 @@ public class ManageUserFormController {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
+
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
 

@@ -38,4 +38,22 @@ public class UserBOImpl implements UserBO {
     public boolean updateUser(UserDTO dto) throws SQLException, ClassNotFoundException {
         return userDAO.update(new User(dto.getUser_name(), dto.getPassword()));
     }
+
+    @Override
+    public boolean changeUName(UserDTO dto) throws SQLException, ClassNotFoundException {
+        String curntUName = dto.getUser_name();
+        String pwd = dto.getPassword();
+        String newUName = dto.getNewUnamePwd();
+
+        return userDAO.updateUname(new User(newUName,pwd));
+    }
+
+    @Override
+    public boolean changePwd(UserDTO dto) throws SQLException, ClassNotFoundException {
+        String uName = dto.getUser_name();
+        String crntPwd = dto.getPassword();
+        String newPwd = dto.getNewUnamePwd();
+
+        return userDAO.update(new User(uName,newPwd));
+    }
 }
