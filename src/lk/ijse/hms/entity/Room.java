@@ -23,4 +23,5 @@ public class Room {
     @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
     private List<Reservation> reserveList;
 
+
 }

@@ -1,5 +1,6 @@
 package lk.ijse.hms.util;
 
+import lk.ijse.hms.entity.*;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -11,7 +12,12 @@ public class FactoryConfiguration {
     private SessionFactory sessionFactory;
 
     private FactoryConfiguration(){
-        Configuration configuration = new Configuration().configure();
+        Configuration configuration = new Configuration().configure()
+                .addAnnotatedClass(CustomEntity.class)
+                .addAnnotatedClass(Reservation.class)
+                .addAnnotatedClass(Room.class)
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(User.class);
         sessionFactory = configuration.buildSessionFactory();
     }
 
