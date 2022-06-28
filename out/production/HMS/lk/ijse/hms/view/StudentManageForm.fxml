@@ -4,56 +4,57 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.StudentManageFormController">
    <children>
-      <JFXTextField labelFloat="true" layoutX="20.0" layoutY="106.0" prefHeight="42.0" prefWidth="169.0" promptText="Student ID">
+      <JFXTextField fx:id="txtStudentId" labelFloat="true" layoutX="64.0" layoutY="106.0" prefHeight="42.0" prefWidth="169.0" promptText="Student ID">
          <font>
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <TableView layoutX="20.0" layoutY="262.0" prefHeight="348.0" prefWidth="959.0">
+      <TableView fx:id="tblStudent" layoutX="63.0" layoutY="262.0" prefHeight="348.0" prefWidth="867.0">
         <columns>
-          <TableColumn prefWidth="105.0" text="Student ID" />
-          <TableColumn prefWidth="150.0" text="Name" />
-            <TableColumn prefWidth="155.0" text="Address" />
-            <TableColumn prefWidth="149.0" text="Contact No" />
-            <TableColumn prefWidth="129.0" text="DOB" />
-            <TableColumn prefWidth="126.0" text="Gender" />
-            <TableColumn prefWidth="144.0" text="Delete" />
+          <TableColumn fx:id="colStudentId" prefWidth="105.0" text="Student ID" />
+          <TableColumn fx:id="colName" prefWidth="150.0" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="155.0" text="Address" />
+            <TableColumn fx:id="colContactNo" prefWidth="149.0" text="Contact No" />
+            <TableColumn fx:id="colDob" prefWidth="129.0" text="DOB" />
+            <TableColumn fx:id="colGender" prefWidth="185.0" text="Gender" />
         </columns>
       </TableView>
-      <JFXTextField labelFloat="true" layoutX="468.0" layoutY="106.0" prefHeight="42.0" prefWidth="268.0" promptText="Address">
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="512.0" layoutY="106.0" prefHeight="42.0" prefWidth="248.0" promptText="Address">
          <font>
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="20.0" layoutY="183.0" prefHeight="42.0" prefWidth="169.0" promptText="Contact No">
+      <JFXTextField fx:id="txtContactNo" labelFloat="true" layoutX="63.0" layoutY="183.0" prefHeight="42.0" prefWidth="169.0" promptText="Contact No">
          <font>
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="207.0" layoutY="106.0" prefHeight="42.0" prefWidth="241.0" promptText="Name">
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="251.0" layoutY="106.0" prefHeight="42.0" prefWidth="241.0" promptText="Name">
          <font>
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <JFXButton layoutX="807.0" layoutY="190.0" prefHeight="42.0" prefWidth="158.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
+      <JFXButton layoutX="800.0" layoutY="189.0" onAction="#btnUpdateOnAction" prefHeight="42.0" prefWidth="128.0" style="-fx-background-color: green;" text="Update" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
       </JFXButton>
-      <JFXDatePicker layoutX="231.0" layoutY="196.0" promptText="DOB" />
-      <JFXComboBox labelFloat="true" layoutX="481.0" layoutY="196.0" prefHeight="31.0" prefWidth="190.0" promptText="Gender" />
-      <JFXButton layoutX="871.0" layoutY="40.0" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: orange;" text="Clear" textFill="WHITE">
+      <JFXDatePicker fx:id="datePDob" layoutX="274.0" layoutY="196.0" promptText="DOB" />
+      <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="524.0" layoutY="196.0" prefHeight="31.0" prefWidth="190.0" promptText="Gender" />
+      <JFXButton layoutX="847.0" layoutY="49.0" onAction="#btnAddNewOnAction" prefHeight="42.0" prefWidth="84.0" style="-fx-background-color: orange;" text="+New" textFill="WHITE">
          <font>
             <Font size="19.0" />
          </font>
       </JFXButton>
+      <FontAwesomeIconView fill="#eb2323" glyphName="TRASH" layoutX="863.0" layoutY="157.0" size="42" textAlignment="CENTER" wrappingWidth="52.14285659790039" />
+      <JFXButton buttonType="RAISED" layoutX="858.0" layoutY="121.0" onAction="#btnDeleteOnAction" prefHeight="43.0" prefWidth="64.0" text="." textFill="#eb2323" />
    </children>
 </AnchorPane>
