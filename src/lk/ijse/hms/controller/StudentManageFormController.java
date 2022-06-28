@@ -13,6 +13,7 @@ import lk.ijse.hms.bo.BOFactory;
 import lk.ijse.hms.bo.custom.StudentBO;
 import lk.ijse.hms.dto.StudentDTO;
 import lk.ijse.hms.view.tdm.StudentTM;
+import lk.ijse.hms.view.tdm.UserTM;
 
 import java.sql.SQLException;
 import java.time.LocalDate;
@@ -46,6 +47,9 @@ public class StudentManageFormController {
 
         loadAllStudents();
 
+        cmbGender.getItems().add("Male");
+        cmbGender.getItems().add("Female");
+
         tblStudent.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
             txtStudentId.setText(newValue.getStudent_id());
             txtName.setText(newValue.getName());
@@ -66,6 +70,14 @@ public class StudentManageFormController {
         try {
             if(studentBO.updateStudent(new StudentDTO(student_id,name,address,contact_no,dob,gender))){
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated ...!").show();
+                StudentTM tm = tblStudent.getSelectionModel().getSelectedItem();
+                tm.setStudent_id(student_id);
+                tm.setName(name);
+                tm.setAddress(address);
+                tm.setContact_no(contact_no);
+                tm.setDob(dob);
+                tm.setGender(gender);
+                tblStudent.refresh();
                 clearUi();
             }
         } catch (SQLException throwables) {
