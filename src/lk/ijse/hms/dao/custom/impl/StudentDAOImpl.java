@@ -27,7 +27,14 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public boolean save(Student entity) throws SQLException, ClassNotFoundException {
-        return false;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        session.save(entity);
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override
@@ -43,7 +50,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public Student search(String s) throws SQLException, ClassNotFoundException {
+    public List<Student> search(String s) throws SQLException, ClassNotFoundException {
         return null;
     }
 

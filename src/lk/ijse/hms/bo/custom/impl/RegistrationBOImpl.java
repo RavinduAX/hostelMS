@@ -13,6 +13,7 @@ import lk.ijse.hms.entity.Room;
 import lk.ijse.hms.entity.Student;
 import lk.ijse.hms.util.FactoryConfiguration;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -51,7 +52,12 @@ public class RegistrationBOImpl implements RegistrationBO {
         r.setRoom_type_id(roomDTO.getRoom_type_id());
         r.setType(roomDTO.getType());
         r.setKey_money(roomDTO.getKey_money());
-        r.setQty(roomDTO.getQty());
+        List<Room> roomList = roomDAO.search(roomDTO.getRoom_type_id());
+        int rQty = 0;
+        for (Room room : roomList) {
+            rQty= room.getQty();
+        }
+        r.setQty(rQty-roomDTO.getQty());
 
         Reservation res = new Reservation();
         res.setRes_id(resDTO.getRes_id());
@@ -67,7 +73,33 @@ public class RegistrationBOImpl implements RegistrationBO {
         s.setReserveList(resList);
         r.setReserveList(resList);
 
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
 
+        boolean saveStudent = stuDAO.save(s);
+        if(!saveStudent){
+            transaction.rollback();
+        }else{
+            transaction.commit();
+        }
+
+        boolean saveRes = resDAO.save(res);
+        if(!saveRes){
+            transaction.rollback();
+        }else {
+            transaction.commit();
+        }
+
+        boolean saveRoom = roomDAO.update(r);
+        if(!saveRoom){
+            transaction.rollback();
+        }else {
+            transaction.commit();
+        }
+
+
+        transaction.commit();
+        return true;
 
     }
 }

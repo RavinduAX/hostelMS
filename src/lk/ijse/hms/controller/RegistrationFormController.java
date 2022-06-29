@@ -144,8 +144,9 @@ public class RegistrationFormController {
         String roomTypeId = txtRoomTypeId.getText();
         String type = (String)cmbRoomType.getValue();
         String keyMoney = txtKeyMoney.getText();
+        int qty = 1;
 
-        RoomDTO roomDTO = new RoomDTO(roomTypeId,type,keyMoney);
+        RoomDTO roomDTO = new RoomDTO(roomTypeId,type,keyMoney,qty);
 
         String rsId = lblRsId.getText();
         LocalDate resDate = dPickRegistrationDate.getValue();

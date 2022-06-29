@@ -51,8 +51,18 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public Room search(String s) throws SQLException, ClassNotFoundException {
-        return null;
+    public List<Room> search(String id) throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "FROM Room WHERE room_type_id = :roomId";
+        Query query = session.createQuery(hql);
+        query.setParameter("roomId", id);
+        List<Room> list = query.list();
+
+        transaction.commit();
+        session.close();
+        return list;
     }
 
     @Override

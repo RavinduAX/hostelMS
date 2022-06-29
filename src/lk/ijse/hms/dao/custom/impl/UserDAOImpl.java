@@ -50,7 +50,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User search(String s) throws SQLException, ClassNotFoundException {
+    public List<User> search(String s) throws SQLException, ClassNotFoundException {
         return null;
     }
 
