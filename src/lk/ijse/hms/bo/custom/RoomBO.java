@@ -15,4 +15,8 @@ public interface RoomBO extends SuperBO {
     public List<RoomDTO> getAllRooms() throws SQLException, ClassNotFoundException;
 
     public boolean deleteRoom(String typeId) throws SQLException, ClassNotFoundException;
+
+    public List<String> getRoomTypes() throws SQLException,ClassNotFoundException;
+
+    public List<RoomDTO> getRoomId(String type) throws SQLException,ClassNotFoundException;
 }

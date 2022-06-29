@@ -1,5 +1,6 @@
 package lk.ijse.hms.entity;
 
+import lk.ijse.hms.dto.ReservationDTO;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -26,4 +27,5 @@ public class Reservation {
     private Room room;
 
     private String status;
+
 }

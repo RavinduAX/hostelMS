@@ -1,7 +1,73 @@
 package lk.ijse.hms.bo.custom.impl;
 
 import lk.ijse.hms.bo.custom.RegistrationBO;
+import lk.ijse.hms.dao.DAOFactory;
+import lk.ijse.hms.dao.custom.ReservationDAO;
+import lk.ijse.hms.dao.custom.RoomDAO;
+import lk.ijse.hms.dao.custom.StudentDAO;
+import lk.ijse.hms.dto.ReservationDTO;
+import lk.ijse.hms.dto.RoomDTO;
+import lk.ijse.hms.dto.StudentDTO;
+import lk.ijse.hms.entity.Reservation;
+import lk.ijse.hms.entity.Room;
+import lk.ijse.hms.entity.Student;
+import lk.ijse.hms.util.FactoryConfiguration;
+import org.hibernate.Session;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class RegistrationBOImpl implements RegistrationBO {
 
+    ReservationDAO resDAO = (ReservationDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.RESERVATION);
+    StudentDAO stuDAO = (StudentDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.STUDENT);
+    RoomDAO roomDAO = (RoomDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ROOM);
+
+    @Override
+    public String generateNewOrderID() throws SQLException, ClassNotFoundException {
+        List<Reservation> res = resDAO.generateNewId();
+        for (Reservation r : res) {
+            if(r != null){
+                return String.format("RID%03d", (Integer.parseInt(r.getRes_id().replace("RID", "")) + 1));
+            }else if (r == null){
+                 return "RID001";
+            }
+        }
+        return "null";
+    }
+
+    @Override
+    public boolean reserveRoom(StudentDTO stDTO, RoomDTO roomDTO, ReservationDTO resDTO) throws SQLException, ClassNotFoundException {
+        Student s = new Student();
+        s.setStudent_id(stDTO.getStudent_id());
+        s.setName(stDTO.getName());
+        s.setAddress(stDTO.getAddress());
+        s.setContact_no(stDTO.getContact_no());
+        s.setDob(stDTO.getDob());
+        s.setGender(stDTO.getGender());
+
+        Room r = new Room();
+        r.setRoom_type_id(roomDTO.getRoom_type_id());
+        r.setType(roomDTO.getType());
+        r.setKey_money(roomDTO.getKey_money());
+        r.setQty(roomDTO.getQty());
+
+        Reservation res = new Reservation();
+        res.setRes_id(resDTO.getRes_id());
+        res.setDate(resDTO.getDate());
+        res.setStatus(res.getStatus());
+
+        res.setStudent(s);
+        res.setRoom(r);
+
+        ArrayList<Reservation> resList = new ArrayList<>();
+        resList.add(res);
+
+        s.setReserveList(resList);
+        r.setReserveList(resList);
+
+
+
+    }
 }

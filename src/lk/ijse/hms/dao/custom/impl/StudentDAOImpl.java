@@ -1,6 +1,7 @@
 package lk.ijse.hms.dao.custom.impl;
 
 import lk.ijse.hms.dao.custom.StudentDAO;
+import lk.ijse.hms.entity.Reservation;
 import lk.ijse.hms.entity.Student;
 import lk.ijse.hms.util.FactoryConfiguration;
 import org.hibernate.Session;
@@ -65,7 +66,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public String generateNewId() throws SQLException, ClassNotFoundException {
+    public List<Student> generateNewId() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

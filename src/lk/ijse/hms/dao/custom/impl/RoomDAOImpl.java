@@ -1,10 +1,12 @@
 package lk.ijse.hms.dao.custom.impl;
 
 import lk.ijse.hms.dao.custom.RoomDAO;
+import lk.ijse.hms.entity.Reservation;
 import lk.ijse.hms.entity.Room;
 import lk.ijse.hms.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 
 import java.sql.SQLException;
@@ -72,7 +74,37 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public String generateNewId() throws SQLException, ClassNotFoundException {
+    public List<Room> generateNewId() throws SQLException, ClassNotFoundException {
         return null;
     }
+
+    @Override
+    public List<String> getRoomTypes() throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "SELECT type FROM Room";
+        List<String> typeList = session.createQuery(hql).list();
+
+        transaction.commit();
+        session.close();
+        return typeList;
+    }
+
+    @Override
+    public List<Room> getRoomId(String type) throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "FROM Room WHERE type = :roomType";
+        Query query = session.createQuery(hql);
+        query.setParameter("roomType", type);
+        List<Room> id = query.list();
+
+        transaction.commit();
+        session.close();
+        return id;
+    }
+
+
 }

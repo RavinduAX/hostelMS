@@ -39,4 +39,20 @@ public class RoomBOImpl implements RoomBO {
     public boolean deleteRoom(String typeId) throws SQLException, ClassNotFoundException {
         return roomDAO.delete(typeId);
     }
+
+    @Override
+    public List<String> getRoomTypes() throws SQLException, ClassNotFoundException {
+        List<String> roomTypes = roomDAO.getRoomTypes();
+        return roomTypes;
+    }
+
+    @Override
+    public List<RoomDTO> getRoomId(String type) throws SQLException, ClassNotFoundException {
+        List<Room> roomList = roomDAO.getRoomId(type);
+        List<RoomDTO> list = new ArrayList<>();
+        for (Room r : roomList) {
+            list.add(new RoomDTO(r.getRoom_type_id(),r.getType(),r.getKey_money(),r.getQty()));
+        }
+        return list;
+    }
 }

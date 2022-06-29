@@ -29,12 +29,12 @@
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="btnName" labelFloat="true" layoutX="104.0" layoutY="262.0" prefHeight="31.0" prefWidth="325.0" promptText="Name">
+      <JFXTextField fx:id="txtName" labelFloat="true" layoutX="104.0" layoutY="262.0" prefHeight="31.0" prefWidth="325.0" promptText="Name">
          <font>
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="btnAddress" labelFloat="true" layoutX="104.0" layoutY="321.0" prefHeight="31.0" prefWidth="325.0" promptText="Address">
+      <JFXTextField fx:id="txtAddress" labelFloat="true" layoutX="104.0" layoutY="321.0" prefHeight="31.0" prefWidth="325.0" promptText="Address">
          <font>
             <Font size="19.0" />
          </font>
@@ -47,7 +47,7 @@
       <JFXComboBox fx:id="cmbGender" labelFloat="true" layoutX="104.0" layoutY="490.0" prefHeight="31.0" prefWidth="325.0" promptText="Gender" />
       <JFXDatePicker fx:id="dPickDob" layoutX="104.0" layoutY="441.0" prefHeight="31.0" prefWidth="325.0" promptText="DOB" />
       <Rectangle arcHeight="15.0" arcWidth="15.0" fill="WHITE" height="197.0" layoutX="537.0" layoutY="181.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="395.0" />
-      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="570.0" layoutY="266.0" prefHeight="31.0" prefWidth="325.0" promptText="Room Type" />
+      <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="570.0" layoutY="266.0" prefHeight="31.0" prefWidth="151.0" promptText="Room Type" />
       <JFXDatePicker fx:id="dPickRegistrationDate" layoutX="570.0" layoutY="213.0" prefHeight="31.0" prefWidth="325.0" promptText="Registration Date" />
       <Rectangle arcHeight="15.0" arcWidth="15.0" fill="WHITE" height="151.0" layoutX="537.0" layoutY="412.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="3.0" width="395.0" />
       <JFXComboBox fx:id="cmbPaymentType" labelFloat="true" layoutX="752.0" layoutY="440.0" prefHeight="31.0" prefWidth="151.0" />
@@ -82,5 +82,15 @@
             <Font size="19.0" />
          </font>
       </JFXTextField>
+      <JFXTextField fx:id="txtRoomTypeId" labelFloat="true" layoutX="752.0" layoutY="256.0" prefHeight="31.0" prefWidth="151.0" promptText="Room Type ID">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </JFXTextField>
+      <Label fx:id="lblRsId" alignment="CENTER" layoutX="69.0" layoutY="17.0" prefHeight="38.0" prefWidth="108.0" style="-fx-border-color: black;">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
