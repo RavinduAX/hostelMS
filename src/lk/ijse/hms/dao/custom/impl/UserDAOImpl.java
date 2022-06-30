@@ -73,7 +73,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public List<User> generateNewId() throws SQLException, ClassNotFoundException {
+    public List<String> generateNewId() throws SQLException, ClassNotFoundException {
         return null;
     }
 

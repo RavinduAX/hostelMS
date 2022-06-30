@@ -84,7 +84,7 @@ public class RoomDAOImpl implements RoomDAO {
     }
 
     @Override
-    public List<Room> generateNewId() throws SQLException, ClassNotFoundException {
+    public List<String> generateNewId() throws SQLException, ClassNotFoundException {
         return null;
     }
 

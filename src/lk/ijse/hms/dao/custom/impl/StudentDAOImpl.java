@@ -73,7 +73,7 @@ public class StudentDAOImpl implements StudentDAO {
     }
 
     @Override
-    public List<Student> generateNewId() throws SQLException, ClassNotFoundException {
+    public List<String> generateNewId() throws SQLException, ClassNotFoundException {
         return null;
     }
 }

@@ -69,4 +69,5 @@ public class UserManageFormController {
         txtCrntPwd.clear();
         txtNewPwd.clear();
     }
+
 }

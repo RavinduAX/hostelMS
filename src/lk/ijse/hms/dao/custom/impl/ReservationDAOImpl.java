@@ -50,18 +50,18 @@ public class ReservationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public List<Reservation> generateNewId() throws SQLException, ClassNotFoundException {
+    public List<String> generateNewId() throws SQLException, ClassNotFoundException {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        String hql = "SELECT res_id FROM Reservation ORDER BY res_id DESC LIMIT 1";
-        NativeQuery sqlQuery = session.createSQLQuery(hql);
-        sqlQuery.addEntity(Reservation.class);
-        List<Reservation> idList = sqlQuery.list();
+        String sql = "SELECT res_id FROM Reservation ORDER BY res_id DESC";
+        NativeQuery query = session.createSQLQuery(sql);
+        query.setMaxResults(1);
+        List<String> lastId = query.list();
 
         transaction.commit();
         session.close();
-        return idList;
+        return lastId;
     }
 
 }

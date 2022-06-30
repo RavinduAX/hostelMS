@@ -26,19 +26,6 @@ public class RegistrationBOImpl implements RegistrationBO {
     RoomDAO roomDAO = (RoomDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ROOM);
 
     @Override
-    public String generateNewOrderID() throws SQLException, ClassNotFoundException {
-        List<Reservation> res = resDAO.generateNewId();
-        for (Reservation r : res) {
-            if(r.getRes_id() != null){
-                return String.format("RID%03d", (Integer.parseInt(r.getRes_id().replace("RID", "")) + 1));
-            }else if (r.getRes_id() == null){
-                 return "RID001";
-            }
-        }
-        return "nooo";
-    }
-
-    @Override
     public boolean reserveRoom(StudentDTO stDTO, RoomDTO roomDTO, ReservationDTO resDTO) throws SQLException, ClassNotFoundException {
         Student s = new Student();
         s.setStudent_id(stDTO.getStudent_id());
@@ -100,6 +87,23 @@ public class RegistrationBOImpl implements RegistrationBO {
 
         transaction.commit();
         return true;
+
+    }
+
+    @Override
+    public String generateNewRegId() throws SQLException, ClassNotFoundException {
+        List<String> lastId = resDAO.generateNewId();
+        String id = null;
+
+        for (String s : lastId) {
+            id = s;
+        }
+
+        if(id != null){
+            return String.format("R%03d", (Integer.parseInt(id.replace("R", "")) + 1));
+        }else{
+            return "R001";
+        }
 
     }
 }

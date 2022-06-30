@@ -85,7 +85,7 @@ public class RegistrationFormController {
 
         });
 
-        lblRsId.setText(generateNewOrderId());
+        generateNewRegId();
     }
 
     private void loadDateAndTime() {
@@ -116,17 +116,6 @@ public class RegistrationFormController {
     private List<RoomDTO> getRoomID(String type) throws SQLException, ClassNotFoundException {
         List<RoomDTO> roomDetail = roomBO.getRoomId(type);
         return roomDetail;
-    }
-
-    public String generateNewOrderId(){
-        try {
-            return regBO.generateNewOrderID();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        }
-        return "RID001";
     }
 
     public void btnAddNewOnAction(ActionEvent actionEvent) {
@@ -170,6 +159,17 @@ public class RegistrationFormController {
             new Alert(Alert.AlertType.WARNING, e.getMessage()).show();
         }
         return true;
+    }
+
+    private void generateNewRegId(){
+        try {
+            String id = regBO.generateNewRegId();
+            lblRsId.setText(id);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 }
