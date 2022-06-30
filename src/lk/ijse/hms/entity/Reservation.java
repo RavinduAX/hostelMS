@@ -3,10 +3,7 @@ package lk.ijse.hms.entity;
 import lk.ijse.hms.dto.ReservationDTO;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 

@@ -7,6 +7,7 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.util.Duration;
 import lk.ijse.hms.bo.BOFactory;
@@ -161,10 +162,12 @@ public class RegistrationFormController {
     private Boolean reserveRoom(StudentDTO stDTO, RoomDTO roomDTO, ReservationDTO resDTO) {
         try {
             return regBO.reserveRoom(stDTO,roomDTO,resDTO);
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+            new Alert(Alert.AlertType.WARNING, e1.getMessage()).show();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
+            new Alert(Alert.AlertType.WARNING, e.getMessage()).show();
         }
         return true;
     }

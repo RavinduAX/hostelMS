@@ -29,13 +29,13 @@ public class RegistrationBOImpl implements RegistrationBO {
     public String generateNewOrderID() throws SQLException, ClassNotFoundException {
         List<Reservation> res = resDAO.generateNewId();
         for (Reservation r : res) {
-            if(r != null){
+            if(r.getRes_id() != null){
                 return String.format("RID%03d", (Integer.parseInt(r.getRes_id().replace("RID", "")) + 1));
-            }else if (r == null){
+            }else if (r.getRes_id() == null){
                  return "RID001";
             }
         }
-        return "null";
+        return "nooo";
     }
 
     @Override
@@ -62,7 +62,7 @@ public class RegistrationBOImpl implements RegistrationBO {
         Reservation res = new Reservation();
         res.setRes_id(resDTO.getRes_id());
         res.setDate(resDTO.getDate());
-        res.setStatus(res.getStatus());
+        res.setStatus(resDTO.getStatus());
 
         res.setStudent(s);
         res.setRoom(r);
