@@ -1,9 +1,6 @@
 package lk.ijse.hms.bo;
 
-import lk.ijse.hms.bo.custom.impl.RegistrationBOImpl;
-import lk.ijse.hms.bo.custom.impl.RoomBOImpl;
-import lk.ijse.hms.bo.custom.impl.StudentBOImpl;
-import lk.ijse.hms.bo.custom.impl.UserBOImpl;
+import lk.ijse.hms.bo.custom.impl.*;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -16,7 +13,7 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        USER, STUDENT, ROOM, REGISTRATION
+        USER, STUDENT, ROOM, REGISTRATION , RESERVED
     }
 
     public SuperBO getBO(BOTypes types){
@@ -29,6 +26,8 @@ public class BOFactory {
                 return new RoomBOImpl();
             case REGISTRATION:
                 return new RegistrationBOImpl();
+            case RESERVED:
+                return new ReservedBOImpl();
             default:
                 return null;
         }

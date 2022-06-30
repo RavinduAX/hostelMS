@@ -25,4 +25,11 @@ public class CustomDTO {
     private String res_id;
     private LocalDate date;
     private String status;
+
+    public CustomDTO(String student_id, String name, String type, String status) {
+        this.student_id = student_id;
+        this.name = name;
+        this.type = type;
+        this.status = status;
+    }
 }

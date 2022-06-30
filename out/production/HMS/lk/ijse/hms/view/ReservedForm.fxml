@@ -10,29 +10,31 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.ReservedFormController">
    <children>
-      <Line endX="44.0" endY="538.0" layoutX="456.0" layoutY="152.0" startX="44.0" startY="-152.0" />
-      <TableView fx:id="tblStudentReservation" layoutX="19.0" layoutY="202.0" prefHeight="448.0" prefWidth="464.0">
+      <Line endX="544.0" endY="223.49996948242188" layoutX="457.0" layoutY="120.0" startX="-456.0" startY="223.5" />
+      <TableView fx:id="tblStudentReservation" layoutX="120.0" layoutY="102.0" prefHeight="214.0" prefWidth="751.0">
         <columns>
-          <TableColumn fx:id="colStudentId" prefWidth="153.0" text="Student ID" />
-          <TableColumn fx:id="colRoomType" prefWidth="160.0" text="Room Type" />
-            <TableColumn fx:id="colStatus" prefWidth="150.0" text="Status" />
+          <TableColumn fx:id="colStudentId" prefWidth="155.66670989990234" text="Student ID" />
+            <TableColumn fx:id="colStudentName" prefWidth="249.99996948242188" text="Student Name" />
+          <TableColumn fx:id="colRoomType" prefWidth="196.0" text="Room Type" />
+            <TableColumn fx:id="colStatus" prefWidth="150.66668701171875" text="Status" />
         </columns>
       </TableView>
-      <TableView fx:id="tblKeyMoneyPendingK" layoutX="515.0" layoutY="202.0" prefHeight="448.0" prefWidth="464.0">
+      <TableView fx:id="tblKeyMoneyPendingK" layoutX="121.0" layoutY="446.0" prefHeight="213.0" prefWidth="751.0">
          <columns>
-            <TableColumn fx:id="colStudentIdK" prefWidth="153.0" text="Student ID" />
-            <TableColumn fx:id="colRoomTypeK" prefWidth="160.0" text="Room Type" />
-            <TableColumn fx:id="colStatusK" prefWidth="150.0" text="Status" />
+            <TableColumn fx:id="colStudentIdK" prefWidth="150.33331298828125" text="Student ID" />
+            <TableColumn fx:id="colStudentNameK" prefWidth="255.33334350585938" text="Student Name" />
+            <TableColumn fx:id="colRoomTypeK" prefWidth="197.6666259765625" text="Room Type" />
+            <TableColumn fx:id="colStatusK" prefWidth="146.0" text="Status" />
          </columns>
       </TableView>
-      <Label alignment="CENTER" layoutX="500.0" layoutY="76.0" prefHeight="68.0" prefWidth="340.0" style="-fx-border-color: black; -fx-background-color: black;" text="KeyMoney Pending List" textFill="WHITE">
+      <Label alignment="CENTER" layoutY="360.0" prefHeight="68.0" prefWidth="340.0" style="-fx-border-color: black; -fx-background-color: black;" text="KeyMoney Pending List" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Circle layoutX="840.0" layoutY="110.0" radius="34.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
-      <Circle fill="WHITE" layoutX="339.0" layoutY="110.0" radius="34.0" stroke="BLACK" strokeType="INSIDE" />
-      <Label alignment="CENTER" layoutX="-1.0" layoutY="76.0" prefHeight="68.0" prefWidth="340.0" style="-fx-border-color: black; -fx-background-color: white;" text="Student Reservation Details">
+      <Circle layoutX="339.0" layoutY="394.0" radius="34.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+      <Circle layoutX="340.0" layoutY="49.0" radius="34.0" stroke="BLACK" strokeType="INSIDE" />
+      <Label alignment="CENTER" layoutY="15.0" prefHeight="68.0" prefWidth="340.0" style="-fx-border-color: black; -fx-background-color: white; -fx-background-color: black;" text="Student Reservation Details" textFill="WHITE">
          <font>
             <Font size="25.0" />
          </font>
