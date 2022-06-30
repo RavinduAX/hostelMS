@@ -13,7 +13,12 @@ import javax.persistence.Id;
 @Entity
 public class User {
     @Id
+    private String uId;
     private String user_name;
     private String password;
 
+    public User(String user_name, String password) {
+        this.user_name = user_name;
+        this.password = password;
+    }
 }

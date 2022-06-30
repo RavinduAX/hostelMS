@@ -11,6 +11,12 @@ import java.awt.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserTM {
+    private String uId;
     private String user_name;
     private String password;
+
+    public UserTM(String user_name, String password) {
+        this.user_name = user_name;
+        this.password = password;
+    }
 }

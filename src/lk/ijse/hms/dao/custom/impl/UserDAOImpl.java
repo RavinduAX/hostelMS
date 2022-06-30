@@ -82,15 +82,26 @@ public class UserDAOImpl implements UserDAO {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
-        String newUName = entity.getUser_name();
-        String pwd = entity.getPassword();
-        String hql = "UPDATE User SET user_name = :uName WHERE password = :pswd";
-        Query query = session.createQuery(hql);
-        query.setParameter("uName", newUName);
-        query.setParameter("pswd", pwd);
+
 
         transaction.commit();
         session.close();
         return true;
+    }
+
+    @Override
+    public List<String> getUserID(String uName, String pwd) throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "SELECT uId FROM User WHERE user_name = :name AND password = :pswd";
+        Query query = session.createQuery(hql);
+        query.setParameter("name", uName);
+        query.setParameter("pswd", pwd);
+        List<String> list = query.list();
+
+        transaction.commit();
+        session.close();
+        return list;
     }
 }

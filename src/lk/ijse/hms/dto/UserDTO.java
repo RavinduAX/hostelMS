@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 @NoArgsConstructor
 //@AllArgsConstructor
 public class UserDTO {
+    private String uId;
     private String user_name;
     private String password;
     private String newUnamePwd;

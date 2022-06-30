@@ -45,7 +45,13 @@ public class UserBOImpl implements UserBO {
         String pwd = dto.getPassword();
         String newUName = dto.getNewUnamePwd();
 
-        return userDAO.updateUname(new User(newUName,pwd));
+        List<String> idList = userDAO.getUserID(curntUName, pwd);
+        String id = null;
+        for (String s : idList) {
+            id = s;
+        }
+
+        return userDAO.update(new User(id,newUName,pwd));
     }
 
     @Override
@@ -54,6 +60,12 @@ public class UserBOImpl implements UserBO {
         String crntPwd = dto.getPassword();
         String newPwd = dto.getNewUnamePwd();
 
-        return userDAO.update(new User(uName,newPwd));
+        List<String> idList = userDAO.getUserID(uName, crntPwd);
+        String id = null;
+        for (String s : idList) {
+            id = s;
+        }
+
+        return userDAO.update(new User(id,uName,newPwd));
     }
 }
