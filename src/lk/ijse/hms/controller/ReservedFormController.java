@@ -58,6 +58,16 @@ public class ReservedFormController {
     }
 
     private void getPendingList() {
+        try {
+            List<CustomDTO> penList = reservedBO.getPendingList();
+            for (CustomDTO dto : penList) {
+                tblKeyMoneyPendingK.getItems().add(new PendingDetailTM(dto.getStudent_id(), dto.getName(), dto.getType(), dto.getStatus()));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
 

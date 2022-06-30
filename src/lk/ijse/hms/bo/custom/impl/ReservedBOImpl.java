@@ -24,4 +24,15 @@ public class ReservedBOImpl implements ReservedBO {
         }
         return dto;
     }
+
+    @Override
+    public List<CustomDTO> getPendingList() throws SQLException, ClassNotFoundException {
+        List<Object[]> pendingList = queryDAO.getPendingList();
+        List<CustomDTO> dto = new ArrayList<>();
+
+        for (Object[] pList : pendingList) {
+            dto.add(new CustomDTO((String)pList[0], (String)pList[1], (String)pList[2], (String)pList[3]));
+        }
+        return dto;
+    }
 }

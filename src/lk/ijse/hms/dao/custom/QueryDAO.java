@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface QueryDAO extends SuperDAO {
     public List<Object[]> getReserveList() throws SQLException, ClassNotFoundException;
+
+    public List<Object[]> getPendingList() throws SQLException, ClassNotFoundException;
 }

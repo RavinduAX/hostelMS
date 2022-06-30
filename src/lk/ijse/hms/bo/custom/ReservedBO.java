@@ -10,4 +10,5 @@ public interface ReservedBO extends SuperBO {
 
     public List<CustomDTO> getReservationList() throws SQLException, ClassNotFoundException;
 
+    public List<CustomDTO> getPendingList() throws SQLException, ClassNotFoundException;
 }
