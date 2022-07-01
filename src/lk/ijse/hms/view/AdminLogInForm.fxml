@@ -15,12 +15,12 @@
          </font>
       </Text>
       <Separator layoutX="49.0" layoutY="86.0" prefHeight="0.0" prefWidth="328.0" />
-      <TextField layoutX="49.0" layoutY="180.0" prefHeight="31.0" prefWidth="328.0">
+      <TextField fx:id="txtUserName" layoutX="49.0" layoutY="180.0" prefHeight="31.0" prefWidth="328.0">
          <font>
             <Font size="19.0" />
          </font>
       </TextField>
-      <TextField layoutX="49.0" layoutY="275.0" prefHeight="31.0" prefWidth="328.0">
+      <TextField fx:id="txtPassword" layoutX="49.0" layoutY="275.0" prefHeight="31.0" prefWidth="328.0">
          <font>
             <Font size="19.0" />
          </font>

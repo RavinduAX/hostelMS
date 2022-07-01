@@ -58,6 +58,9 @@ public class RegistrationFormController {
             if(newValue.equals("Pay Later")){
                 txtAmount.setText("Pending");
                 txtAmount.setEditable(false);
+            }else if(newValue.equals("Pay Now")) {
+                txtAmount.clear();
+                txtAmount.setEditable(true);
             }
         });
 
@@ -119,6 +122,8 @@ public class RegistrationFormController {
     }
 
     public void btnAddNewOnAction(ActionEvent actionEvent) {
+        generateNewRegId();
+        clearUI();
     }
 
     public void btnRegisterOnAction(ActionEvent actionEvent) {
@@ -146,6 +151,9 @@ public class RegistrationFormController {
 
         reserveRoom(studentDTO,roomDTO,reservationDTO);
 
+        generateNewRegId();
+        clearUI();
+
     }
 
     private Boolean reserveRoom(StudentDTO stDTO, RoomDTO roomDTO, ReservationDTO resDTO) {
@@ -170,6 +178,23 @@ public class RegistrationFormController {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    private void clearUI(){
+        txtStudentId.clear();
+        txtName.clear();
+        txtAddress.clear();
+        txtContactNo.clear();
+        dPickDob.setValue(null);
+        cmbGender.setValue(null);
+
+        dPickRegistrationDate.setValue(null);
+        cmbRoomType.setValue(null);
+        txtRoomTypeId.clear();
+        txtKeyMoney.clear();
+
+        cmbPaymentType.setValue(null);
+        txtAmount.clear();
     }
 
 }

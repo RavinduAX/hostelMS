@@ -115,4 +115,20 @@ public class UserDAOImpl implements UserDAO {
         session.close();
         return list;
     }
+
+    @Override
+    public List<User> checkLogin(String uName, String pwd) throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String sql = "SELECT user_name, password FROM User WHERE user_name = :name AND password = :pswd";
+        Query query = session.createQuery(sql);
+        query.setParameter("name", uName);
+        query.setParameter("pswd", pwd);
+        List<User> list = query.list();
+
+        transaction.commit();
+        session.close();
+        return list;
+    }
 }

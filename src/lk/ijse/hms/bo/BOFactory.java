@@ -13,7 +13,7 @@ public class BOFactory {
     }
 
     public enum BOTypes{
-        USER, STUDENT, ROOM, REGISTRATION , RESERVED
+        USER, STUDENT, ROOM, REGISTRATION , RESERVED , LOGIN
     }
 
     public SuperBO getBO(BOTypes types){
@@ -28,6 +28,8 @@ public class BOFactory {
                 return new RegistrationBOImpl();
             case RESERVED:
                 return new ReservedBOImpl();
+            case LOGIN:
+                return new LoginBOImpl();
             default:
                 return null;
         }

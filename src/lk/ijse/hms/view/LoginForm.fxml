@@ -24,12 +24,12 @@
          </font>
       </Label>
       <Rectangle fill="WHITE" height="401.0" layoutX="239.0" layoutY="218.0" stroke="BLACK" strokeType="INSIDE" width="415.0" />
-      <JFXTextField labelFloat="true" layoutX="275.0" layoutY="343.0" prefHeight="44.0" prefWidth="343.0" promptText="UserName">
+      <JFXTextField fx:id="txtUserName" labelFloat="true" layoutX="275.0" layoutY="343.0" prefHeight="44.0" prefWidth="343.0" promptText="UserName">
          <font>
             <Font size="20.0" />
          </font>
       </JFXTextField>
-      <JFXTextField labelFloat="true" layoutX="277.0" layoutY="419.0" prefHeight="44.0" prefWidth="343.0" promptText="Password">
+      <JFXTextField fx:id="txtPwd" labelFloat="true" layoutX="277.0" layoutY="419.0" prefHeight="44.0" prefWidth="343.0" promptText="Password">
          <font>
             <Font size="20.0" />
          </font>

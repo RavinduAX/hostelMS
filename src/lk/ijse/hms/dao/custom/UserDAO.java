@@ -10,4 +10,6 @@ public interface UserDAO extends CrudDAO<User, String> {
     public boolean updateUname(User entity) throws SQLException, ClassNotFoundException;
 
     public List<String> getUserID(String uName, String pwd) throws SQLException, ClassNotFoundException;
+
+    public List<User> checkLogin(String uName, String pwd) throws SQLException, ClassNotFoundException;
 }

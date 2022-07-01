@@ -130,5 +130,7 @@ public class StudentManageFormController {
         txtContactNo.clear();
         txtName.clear();
         txtStudentId.clear();
+        cmbGender.setValue(null);
+        datePDob.setValue(null);
     }
 }
