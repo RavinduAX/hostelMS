@@ -15,12 +15,12 @@ public class AdminLogInFormController {
     public TextField txtPassword;
 
     public void btnAdminLogInOnAction(ActionEvent actionEvent) throws IOException {
-       /* if(txtUserName.getText().equals("admin") & txtPassword.getText().equals("12345")){
+        if(txtUserName.getText().equals("admin") & txtPassword.getText().equals("12345")){
             Stage stage = (Stage) contextAdminLogin.getScene().getWindow();
             stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/ManageUserForm.fxml"))));
-        }*/
+        }
 
-        Stage stage = (Stage) contextAdminLogin.getScene().getWindow();
-        stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/ManageUserForm.fxml"))));
+        //Stage stage = (Stage) contextAdminLogin.getScene().getWindow();
+        //stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/ManageUserForm.fxml"))));
     }
 }
