@@ -20,6 +20,7 @@ public class DashboardFormController {
     public JFXButton btnManageRooms;
     public JFXButton btnUserSettings;
     public JFXButton btnReservedDetails;
+    public JFXButton btnCheckout;
 
     public void initialize() throws IOException {
         lblTitle.setText("Manage Rooms");
@@ -40,6 +41,7 @@ public class DashboardFormController {
         btnManageRooms.setStyle("-fx-background-color: #ffffff; ");
         btnUserSettings.setStyle("-fx-background-color: #ffffff; ");
         btnReservedDetails.setStyle("-fx-background-color: #ffffff; ");
+        btnCheckout.setStyle("-fx-background-color: #ffffff;");
     }
 
     public void btnManageStudentOnAction(ActionEvent actionEvent) throws IOException {
@@ -50,6 +52,7 @@ public class DashboardFormController {
         btnManageRooms.setStyle("-fx-background-color: #ffffff; ");
         btnUserSettings.setStyle("-fx-background-color: #ffffff; ");
         btnReservedDetails.setStyle("-fx-background-color: #ffffff; ");
+        btnCheckout.setStyle("-fx-background-color: #ffffff;");
     }
 
     public void btnManageRoomOnAction(ActionEvent actionEvent) throws IOException {
@@ -60,6 +63,7 @@ public class DashboardFormController {
         btnManageStudents.setStyle("-fx-background-color: #ffffff; ");
         btnUserSettings.setStyle("-fx-background-color: #ffffff; ");
         btnReservedDetails.setStyle("-fx-background-color: #ffffff; ");
+        btnCheckout.setStyle("-fx-background-color: #ffffff;");
     }
 
     public void btnUserSettingsOnAction(ActionEvent actionEvent) throws IOException {
@@ -70,6 +74,7 @@ public class DashboardFormController {
         btnManageStudents.setStyle("-fx-background-color: #ffffff; ");
         btnManageRooms.setStyle("-fx-background-color: #ffffff; ");
         btnReservedDetails.setStyle("-fx-background-color: #ffffff; ");
+        btnCheckout.setStyle("-fx-background-color: #ffffff;");
     }
 
     public void btnReservedDetailsOnAction(ActionEvent actionEvent) throws IOException {
@@ -80,6 +85,17 @@ public class DashboardFormController {
         btnManageStudents.setStyle("-fx-background-color: #ffffff; ");
         btnManageRooms.setStyle("-fx-background-color: #ffffff; ");
         btnUserSettings.setStyle("-fx-background-color: #ffffff; ");
+        btnCheckout.setStyle("-fx-background-color: #ffffff;");
+    }
+
+    public void btnCheckOutOnAction(ActionEvent actionEvent) throws IOException {
+        loadUI("../view/CheckOutForm.fxml");
+        btnCheckout.setStyle("-fx-background-color: #E84545;");
+        btnRegistration.setStyle("-fx-background-color: #ffffff; ");
+        btnManageStudents.setStyle("-fx-background-color: #ffffff; ");
+        btnManageRooms.setStyle("-fx-background-color: #ffffff; ");
+        btnUserSettings.setStyle("-fx-background-color: #ffffff; ");
+        btnReservedDetails.setStyle("-fx-background-color: #ffffff; ");
     }
 
     private void loadUI(String location) throws IOException {
@@ -87,5 +103,4 @@ public class DashboardFormController {
         Parent parent = FXMLLoader.load(getClass().getResource(location));
         contextSubAnchor.getChildren().add(parent);
     }
-
 }

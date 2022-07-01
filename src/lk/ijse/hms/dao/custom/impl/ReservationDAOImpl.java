@@ -2,6 +2,7 @@ package lk.ijse.hms.dao.custom.impl;
 
 import lk.ijse.hms.dao.custom.ReservationDAO;
 import lk.ijse.hms.entity.Reservation;
+import lk.ijse.hms.entity.User;
 import lk.ijse.hms.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -35,7 +36,7 @@ public class ReservationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public List<Reservation> search(String s) throws SQLException, ClassNotFoundException {
+    public List<Reservation> search(String status) throws SQLException, ClassNotFoundException {
         return null;
     }
 
@@ -45,8 +46,16 @@ public class ReservationDAOImpl implements ReservationDAO {
     }
 
     @Override
-    public boolean delete(String s) throws SQLException, ClassNotFoundException {
-        return false;
+    public boolean delete(String resId) throws SQLException, ClassNotFoundException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        Reservation res = session.load(Reservation.class, resId);
+        session.delete(res);
+
+        transaction.commit();
+        session.close();
+        return true;
     }
 
     @Override

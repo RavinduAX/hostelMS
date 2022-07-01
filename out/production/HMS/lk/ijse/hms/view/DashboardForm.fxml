@@ -59,5 +59,10 @@
             <Font size="22.0" />
          </font>
       </JFXButton>
+      <JFXButton fx:id="btnCheckout" layoutX="6.0" layoutY="353.0" onAction="#btnCheckOutOnAction" prefHeight="48.0" prefWidth="213.0" style="-fx-background-color: white;" text="CheckOut">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

@@ -11,4 +11,8 @@ public interface QueryDAO extends SuperDAO {
     public List<Object[]> getReserveList() throws SQLException, ClassNotFoundException;
 
     public List<Object[]> getPendingList() throws SQLException, ClassNotFoundException;
+
+    public List<Object[]> search(String id) throws SQLException, ClassNotFoundException;
+
+    public List<Object[]> searchResId(String sId, String roomId, String status) throws SQLException, ClassNotFoundException;
 }

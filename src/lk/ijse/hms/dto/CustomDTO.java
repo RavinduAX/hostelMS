@@ -32,4 +32,10 @@ public class CustomDTO {
         this.type = type;
         this.status = status;
     }
+
+    public CustomDTO(String student_id, String room_type_id, String status) {
+        this.student_id = student_id;
+        this.room_type_id = room_type_id;
+        this.status = status;
+    }
 }
