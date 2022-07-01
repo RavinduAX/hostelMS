@@ -61,14 +61,14 @@ public class ManageUserFormController {
     }
 
     public void btnSaveOnAction(ActionEvent actionEvent) {
-
+        String userId = txtUserId.getText();
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
 
         if(btnSave.getText().equalsIgnoreCase("save")){
             try {
-                if(userBO.saveUser(new UserDTO(userName, password))){
-                    tblUser.getItems().add(new UserTM(userName, password));
+                if(userBO.saveUser(new UserDTO(userId, userName, password))){
+                    tblUser.getItems().add(new UserTM(userId, userName, password));
                     new Alert(Alert.AlertType.CONFIRMATION, "Saved... !").show();
                     tblUser.refresh();
                     clearUI();
@@ -81,7 +81,7 @@ public class ManageUserFormController {
             }
         }else if(btnSave.getText().equalsIgnoreCase("update")){
             try {
-                if(userBO.updateUser(new UserDTO(userName,password))){
+                if(userBO.updateUser(new UserDTO(userId,userName,password))){
                     UserTM tm = tblUser.getSelectionModel().getSelectedItem();
                     tm.setUser_name(userName);
                     tm.setPassword(password);
@@ -100,16 +100,17 @@ public class ManageUserFormController {
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
-        String userNme = txtUserName.getText();
-        Alert alert = new Alert(Alert.AlertType.WARNING, "Are you sure you want to Delete \"" + userNme + "\" User ?", ButtonType.YES, ButtonType.NO);
+        String userId = txtUserId.getText();
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Are you sure you want to Delete \"" + userId + "\" User ?", ButtonType.YES, ButtonType.NO);
         Optional<ButtonType> buttonType = alert.showAndWait();
         if (buttonType.get().equals(ButtonType.YES)){
             try {
-                if(userBO.deleteUser(userNme)){
+                if(userBO.deleteUser(userId)){
                     new Alert(Alert.AlertType.CONFIRMATION,"Successfully Deleted !").show();
                     tblUser.getItems().remove(tblUser.getSelectionModel().getSelectedItem());
                     tblUser.getSelectionModel().clearSelection();
                     btnSave.setText("Save");
+                    generateUserID();
                     clearUI();
                 }
             } catch (SQLException throwables) {

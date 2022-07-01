@@ -16,7 +16,7 @@ public class UserBOImpl implements UserBO {
 
     @Override
     public boolean saveUser(UserDTO dto) throws SQLException, ClassNotFoundException {
-        return userDAO.save(new User(dto.getUser_name(), dto.getPassword()));
+        return userDAO.save(new User(dto.getUser_name(), dto.getPassword(), dto.getNewUnamePwd()));
     }
 
     @Override
@@ -32,13 +32,13 @@ public class UserBOImpl implements UserBO {
     }
 
     @Override
-    public boolean deleteUser(String userNme) throws SQLException, ClassNotFoundException {
-        return userDAO.delete(userNme);
+    public boolean deleteUser(String userId) throws SQLException, ClassNotFoundException {
+        return userDAO.delete(userId);
     }
 
     @Override
     public boolean updateUser(UserDTO dto) throws SQLException, ClassNotFoundException {
-        return userDAO.update(new User(dto.getUser_name(), dto.getPassword()));
+        return userDAO.update(new User(dto.getUser_name(), dto.getPassword(), dto.getNewUnamePwd()));
     }
 
     @Override

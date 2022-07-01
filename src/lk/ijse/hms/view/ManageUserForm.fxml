@@ -39,7 +39,7 @@
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <JFXTextField fx:id="txtUserId" labelFloat="true" layoutX="70.0" layoutY="143.0" prefHeight="42.0" prefWidth="105.0">
+      <JFXTextField fx:id="txtUserId" editable="false" labelFloat="true" layoutX="70.0" layoutY="143.0" prefHeight="42.0" prefWidth="105.0">
          <font>
             <Font size="19.0" />
          </font>
