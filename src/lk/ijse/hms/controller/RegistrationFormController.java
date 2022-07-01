@@ -153,6 +153,25 @@ public class RegistrationFormController {
 
         generateNewRegId();
         clearUI();
+//===================================
+        if (!sId.matches("^(S)[0-9]{3}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid StudentID 'S000'").show();
+            txtStudentId.requestFocus();
+            return;
+        }else if (!name.matches("[A-Za-z ]")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Name '[A-z ]'").show();
+            txtName.requestFocus();
+            return;
+        }else if (!address.matches("^[A-z0-9 ,/.]{4,50}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Address [A-z 0-9]").show();
+            txtAddress.requestFocus();
+            return;
+        }else if (!contactNo.matches("^[0-9]{10}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid ContactNo '0123456789'").show();
+            txtContactNo.requestFocus();
+            return;
+        }
+
 
     }
 
