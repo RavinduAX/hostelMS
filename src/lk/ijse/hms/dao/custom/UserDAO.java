@@ -11,5 +11,5 @@ public interface UserDAO extends CrudDAO<User, String> {
 
     public List<String> getUserID(String uName, String pwd) throws SQLException, ClassNotFoundException;
 
-    public List<User> checkLogin(String uName, String pwd) throws SQLException, ClassNotFoundException;
+    public List<Object[]> checkLogin(String uName, String pwd) throws SQLException, ClassNotFoundException;
 }

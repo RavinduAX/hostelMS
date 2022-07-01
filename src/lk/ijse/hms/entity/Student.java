@@ -24,7 +24,7 @@ public class Student {
     private String contact_no;
     private LocalDate dob;
     private String gender;
-    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "room", cascade = {CascadeType.ALL , CascadeType.REMOVE})
     private List<Reservation> reserveList;
 
     public Student(String student_id, String name, String address, String contact_no, LocalDate dob, String gender) {

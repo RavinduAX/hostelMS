@@ -1,5 +1,6 @@
 package lk.ijse.hms.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXTextField;
@@ -30,6 +31,7 @@ public class RegistrationFormController {
     RoomBO roomBO = (RoomBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
     RegistrationBO regBO = (RegistrationBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.REGISTRATION);
 
+    public JFXButton btnRegister;
     public JFXTextField txtAddress;
     public Label lblRsId;
     public JFXTextField txtName;
@@ -59,8 +61,8 @@ public class RegistrationFormController {
                 txtAmount.setText("Pending");
                 txtAmount.setEditable(false);
             }else if(newValue.equals("Pay Now")) {
-                txtAmount.clear();
-                txtAmount.setEditable(true);
+                txtAmount.setText("Complete");
+                txtAmount.setEditable(false);
             }
         });
 
@@ -122,6 +124,7 @@ public class RegistrationFormController {
     }
 
     public void btnAddNewOnAction(ActionEvent actionEvent) {
+        btnRegister.setDisable(false);
         generateNewRegId();
         clearUI();
     }

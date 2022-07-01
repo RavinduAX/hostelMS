@@ -65,6 +65,12 @@ public class ManageUserFormController {
         String userName = txtUserName.getText();
         String password = txtPassword.getText();
 
+        if (!userName.matches("[A-Za-z ]")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Name '[A-z ]'").show();
+            txtUserName.requestFocus();
+            return;
+        }
+
         if(btnSave.getText().equalsIgnoreCase("save")){
             try {
                 if(userBO.saveUser(new UserDTO(userId, userName, password))){
@@ -72,6 +78,7 @@ public class ManageUserFormController {
                     new Alert(Alert.AlertType.CONFIRMATION, "Saved... !").show();
                     tblUser.refresh();
                     clearUI();
+                    generateUserID();
                 }
 
             } catch (SQLException throwables) {

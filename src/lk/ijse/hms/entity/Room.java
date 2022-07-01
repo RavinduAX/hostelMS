@@ -20,7 +20,7 @@ public class Room {
     private String type;
     private String key_money;
     private int qty;
-    @OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "student", cascade = {CascadeType.ALL , CascadeType.REMOVE})
     private List<Reservation> reserveList;
 
     public Room(String room_type_id, String type, String key_money, int qty) {
