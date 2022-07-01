@@ -38,21 +38,25 @@ public class ManageUserFormController {
     public void initialize(){
         colUserName.setCellValueFactory(new PropertyValueFactory<>("user_name"));
         colPassword.setCellValueFactory(new PropertyValueFactory<>("password"));
-        colUserId.setCellValueFactory(new PropertyValueFactory<>("btn"));
+        colUserId.setCellValueFactory(new PropertyValueFactory<>("uId"));
 
         loadAllUsers();
 
         tblUser.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            txtUserId.setText(newValue.getUId());
             txtUserName.setText(newValue.getUser_name());
             txtPassword.setText(newValue.getPassword());
             if(newValue != null){
                 btnSave.setText("Update");
             }
         });
+
+        generateUserID();
     }
 
     public void btnAddNewOnAction(ActionEvent actionEvent) {
         btnSave.setText("Save");
+        generateUserID();
         clearUI();
     }
 
@@ -125,8 +129,19 @@ public class ManageUserFormController {
         try {
             List<UserDTO> allUsers = userBO.getAllUsers();
             for (UserDTO user : allUsers) {
-                tblUser.getItems().add(new UserTM(user.getUser_name(), user.getPassword()));
+                tblUser.getItems().add(new UserTM(user.getUser_name(),user.getPassword(), user.getNewUnamePwd()));
             }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void generateUserID(){
+        try {
+            String id = userBO.generateUserID();
+            txtUserId.setText(id);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } catch (ClassNotFoundException e) {

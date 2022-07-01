@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 
 @Data
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 public class UserDTO {
     private String uId;
     private String user_name;

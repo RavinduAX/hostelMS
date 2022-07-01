@@ -23,8 +23,10 @@ public class UserBOImpl implements UserBO {
     public List<UserDTO> getAllUsers() throws SQLException, ClassNotFoundException {
         List<User> userList = userDAO.getAll();
         List<UserDTO> dtoList= new ArrayList<>();
+        UserDTO uDto = new UserDTO();
         for (User user : userList) {
-            dtoList.add(new UserDTO(user.getUser_name(), user.getPassword()));
+            dtoList.add(new UserDTO(user.getUId(), user.getUser_name(), user.getPassword()));
+
         }
         return dtoList;
     }
@@ -67,5 +69,21 @@ public class UserBOImpl implements UserBO {
         }
 
         return userDAO.update(new User(id,uName,newPwd));
+    }
+
+    @Override
+    public String generateUserID() throws SQLException, ClassNotFoundException {
+        List<String> lastId = userDAO.generateNewId();
+        String id = null;
+
+        for (String s : lastId) {
+            id = s;
+        }
+
+        if(id != null){
+            return String.format("U%03d", (Integer.parseInt(id.replace("U", "")) + 1));
+        }else{
+            return "U001";
+        }
     }
 }

@@ -6,6 +6,7 @@ import lk.ijse.hms.entity.User;
 import lk.ijse.hms.util.FactoryConfiguration;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
 import java.sql.SQLException;
@@ -74,7 +75,17 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<String> generateNewId() throws SQLException, ClassNotFoundException {
-        return null;
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String sql = "SELECT uId FROM User ORDER BY uId DESC";
+        NativeQuery query = session.createSQLQuery(sql);
+        query.setMaxResults(1);
+        List<String> lastId = query.list();
+
+        transaction.commit();
+        session.close();
+        return lastId;
     }
 
     @Override

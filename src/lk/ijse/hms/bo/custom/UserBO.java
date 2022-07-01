@@ -18,4 +18,6 @@ public interface UserBO extends SuperBO {
     public boolean changeUName(UserDTO dto) throws SQLException, ClassNotFoundException;
 
     public boolean changePwd(UserDTO dto) throws SQLException, ClassNotFoundException;
+
+    public String generateUserID() throws SQLException, ClassNotFoundException;
 }
