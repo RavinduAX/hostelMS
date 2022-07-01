@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="647.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.UserManageFormController">
+<AnchorPane prefHeight="647.0" prefWidth="1024.0" style="-fx-background-color: #D4D4D8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.UserManageFormController">
    <children>
       <Text layoutX="116.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Account Settings" wrappingWidth="217.04150390625">
          <font>
@@ -20,7 +20,7 @@
       </Text>
       <Line endX="841.0" layoutX="115.0" layoutY="81.0" startX="-51.0" />
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="445.0" layoutX="546.0" layoutY="145.0" stroke="BLACK" strokeType="INSIDE" width="411.0" />
-      <JFXButton buttonType="RAISED" layoutX="617.0" layoutY="490.0" onAction="#btnChangePwdOnAction" prefHeight="45.0" prefWidth="270.0" style="-fx-background-color: yellow; -fx-background-radius: 45;" text="Change Password">
+      <JFXButton buttonType="RAISED" layoutX="617.0" layoutY="490.0" onAction="#btnChangePwdOnAction" prefHeight="45.0" prefWidth="270.0" style="-fx-background-color: #2d98da; -fx-background-radius: 45;" text="Change Password">
          <font>
             <Font size="20.0" />
          </font>
@@ -46,7 +46,7 @@
          </font>
       </TextField>
       <Rectangle arcHeight="40.0" arcWidth="40.0" fill="WHITE" height="445.0" layoutX="63.0" layoutY="145.0" stroke="BLACK" strokeType="INSIDE" width="411.0" />
-      <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="490.0" onAction="#btnChangeUNameOnAction" prefHeight="45.0" prefWidth="270.0" style="-fx-background-color: yellow; -fx-background-radius: 45;" text="Change UserName">
+      <JFXButton buttonType="RAISED" layoutX="134.0" layoutY="490.0" onAction="#btnChangeUNameOnAction" prefHeight="45.0" prefWidth="270.0" style="-fx-background-color: #2d98da; -fx-background-radius: 45;" text="Change UserName">
          <font>
             <Font size="20.0" />
          </font>

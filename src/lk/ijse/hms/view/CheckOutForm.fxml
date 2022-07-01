@@ -7,11 +7,10 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="689.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.CheckOutFormController">
+<AnchorPane prefHeight="689.0" prefWidth="1000.0" style="-fx-background-color: #D4D4D8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.CheckOutFormController">
    <children>
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="447.0" layoutX="273.0" layoutY="64.0" stroke="BLACK" strokeType="INSIDE" width="466.0" />
-      <JFXButton fx:id="btnCheckOut" buttonType="RAISED" layoutX="404.0" layoutY="547.0" onAction="#btnCheckOutOnAction" prefHeight="55.0" prefWidth="227.0" style="-fx-background-color: green;" text="CheckOut" textFill="WHITE">
+      <JFXButton fx:id="btnCheckOut" buttonType="RAISED" layoutX="404.0" layoutY="547.0" onAction="#btnCheckOutOnAction" prefHeight="55.0" prefWidth="227.0" style="-fx-background-color: #10ac84;" text="CheckOut" textFill="WHITE">
          <font>
             <Font size="22.0" />
          </font>
@@ -31,9 +30,9 @@
             <Font size="19.0" />
          </font>
       </JFXTextField>
-      <JFXButton buttonType="RAISED" layoutX="593.0" layoutY="132.0" onAction="#btnSearchOnAction" prefHeight="41.0" prefWidth="81.0" style="-fx-background-color: yellow;" text="Search">
+      <JFXButton buttonType="RAISED" layoutX="608.0" layoutY="133.0" onAction="#btnSearchOnAction" prefHeight="41.0" prefWidth="81.0" style="-fx-background-color: FB8C00;" text="Check">
          <font>
-            <Font size="15.0" />
+            <Font name="System Bold" size="18.0" />
          </font>
       </JFXButton>
       <Label fx:id="lblWarning" alignment="CENTER" layoutX="321.0" layoutY="393.0" prefHeight="73.0" prefWidth="368.0" style="-fx-border-color: black;">

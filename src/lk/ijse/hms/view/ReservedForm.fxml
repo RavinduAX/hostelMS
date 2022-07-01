@@ -8,7 +8,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.ReservedFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0" prefWidth="1000.0" style="-fx-background-color: #D4D4D8;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hms.controller.ReservedFormController">
    <children>
       <Line endX="544.0" endY="223.49996948242188" layoutX="457.0" layoutY="120.0" startX="-456.0" startY="223.5" />
       <TableView fx:id="tblStudentReservation" layoutX="120.0" layoutY="102.0" prefHeight="214.0" prefWidth="751.0">
