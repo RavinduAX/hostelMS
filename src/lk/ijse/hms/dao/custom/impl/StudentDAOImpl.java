@@ -14,7 +14,7 @@ import java.util.List;
 public class StudentDAOImpl implements StudentDAO {
     @Override
     public List<Student> getAll() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "FROM Student";
@@ -27,7 +27,7 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public boolean save(Student entity) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         session.save(entity);
@@ -39,7 +39,7 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public boolean update(Student entity) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         session.update(entity);
@@ -61,7 +61,7 @@ public class StudentDAOImpl implements StudentDAO {
 
     @Override
     public boolean delete(String sId) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         Student stu = session.load(Student.class, sId);

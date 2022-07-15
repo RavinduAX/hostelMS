@@ -60,7 +60,7 @@ public class RegistrationBOImpl implements RegistrationBO {
         s.setReserveList(resList);
         r.setReserveList(resList);
 
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         boolean saveStudent = stuDAO.save(s);

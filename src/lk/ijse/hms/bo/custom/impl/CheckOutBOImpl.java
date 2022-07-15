@@ -37,7 +37,7 @@ public class CheckOutBOImpl implements CheckOutBO {
 
     @Override
     public boolean checkoutStudent(String sId, String roomId, String status) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         boolean stuDelete = stuDAO.delete(sId);

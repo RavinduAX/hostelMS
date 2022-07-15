@@ -15,7 +15,7 @@ import java.util.List;
 public class UserDAOImpl implements UserDAO {
     @Override
     public List<User> getAll() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "FROM User";
@@ -28,7 +28,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean save(User entity) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         session.save(entity);
@@ -40,7 +40,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean update(User entity) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         session.update(entity);
@@ -62,7 +62,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean delete(String userNme) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         User user = session.load(User.class, userNme);
@@ -75,7 +75,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<String> generateNewId() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String sql = "SELECT uId FROM User ORDER BY uId DESC";
@@ -90,7 +90,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean updateUname(User entity) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
 
@@ -102,7 +102,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<String> getUserID(String uName, String pwd) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "SELECT uId FROM User WHERE user_name = :name AND password = :pswd";
@@ -118,7 +118,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public List<Object[]> checkLogin(String uName, String pwd) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "SELECT user_name, password FROM User WHERE user_name = :name AND password = :pswd";

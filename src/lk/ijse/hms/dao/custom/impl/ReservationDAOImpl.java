@@ -20,7 +20,7 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public boolean save(Reservation entity) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         session.save(entity);
@@ -47,7 +47,7 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public boolean delete(String resId) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         Reservation res = session.load(Reservation.class, resId);
@@ -60,7 +60,7 @@ public class ReservationDAOImpl implements ReservationDAO {
 
     @Override
     public List<String> generateNewId() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String sql = "SELECT res_id FROM Reservation ORDER BY res_id DESC";

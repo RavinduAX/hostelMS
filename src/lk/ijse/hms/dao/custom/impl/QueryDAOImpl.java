@@ -13,7 +13,7 @@ import java.util.List;
 public class QueryDAOImpl implements QueryDAO {
     @Override
     public List<Object[]> getReserveList() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "SELECT s.student_id, s.name, r.type, res.status FROM Student s INNER JOIN Reservation res ON s.student_id = res.student INNER JOIN Room r ON r.room_type_id = res.room";
@@ -26,7 +26,7 @@ public class QueryDAOImpl implements QueryDAO {
 
     @Override
     public List<Object[]> getPendingList() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "SELECT s.student_id, s.name, r.type, res.status FROM Student s INNER JOIN Reservation res ON s.student_id = res.student INNER JOIN Room r ON r.room_type_id = res.room WHERE res.status = 'Pending'";
@@ -39,7 +39,7 @@ public class QueryDAOImpl implements QueryDAO {
 
     @Override
     public List<Object[]> search(String id) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "SELECT s.student_id, r.room_type_id, res.status FROM Student s INNER JOIN Reservation res ON s.student_id = res.student INNER JOIN Room r ON r.room_type_id = res.room WHERE s.student_id = :sId";
@@ -55,7 +55,7 @@ public class QueryDAOImpl implements QueryDAO {
     @Override
     public List<Object[]> searchResId(String sId, String roomId, String status) throws SQLException, ClassNotFoundException {
 
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
         String hql = "SELECT res.res_id FROM Student s INNER JOIN Reservation res ON s.student_id = res.student INNER JOIN Room r ON r.room_type_id = res.room WHERE ((s.student_id = :stId AND res.status = :resstatus) AND r.room_type_id = :rTypeId )";
         Query query = session.createQuery(hql);

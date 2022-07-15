@@ -15,7 +15,7 @@ import java.util.List;
 public class RoomDAOImpl implements RoomDAO {
     @Override
     public List<Room> getAll() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "FROM Room";
@@ -28,7 +28,7 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public boolean save(Room entity) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         session.save(entity);
@@ -40,7 +40,7 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public boolean update(Room entity) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         session.update(entity);
@@ -52,7 +52,7 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public List<Room> search(String id) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "FROM Room WHERE room_type_id = :roomId";
@@ -72,7 +72,7 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public boolean delete(String typeId) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         Room room = session.load(Room.class, typeId);
@@ -90,7 +90,7 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public List<String> getRoomTypes() throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "SELECT type FROM Room";
@@ -103,7 +103,7 @@ public class RoomDAOImpl implements RoomDAO {
 
     @Override
     public List<Room> getRoomId(String type) throws SQLException, ClassNotFoundException {
-        Session session = FactoryConfiguration.getInstance().getSession();
+        Session session = FactoryConfiguration.getInstance().openSession();
         Transaction transaction = session.beginTransaction();
 
         String hql = "FROM Room WHERE type = :roomType";
